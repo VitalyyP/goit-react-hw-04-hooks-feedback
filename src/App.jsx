@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Statistics from './components/Statistics';
 import FeedbackOptions from './components/FeedbackOptions';
 import Section from './components/Section';
+import Container from './components/Container';
 
 export default function App() {
   const [good, setGood] = useState(0);
@@ -35,7 +36,7 @@ export default function App() {
     Math.round((good / totalFeedbacks) * 100);
 
   return (
-    <>
+    <Container>
       <Section title="Please leave feedback">
         <FeedbackOptions options={['good', 'neutral', 'bad']} onLeaveFeedback={handleIncrement} />
       </Section>
@@ -48,6 +49,6 @@ export default function App() {
           countPositiveFeedbackPercentage={countPositiveFeedbackPercentage}
         />
       </Section>
-    </>
+    </Container>
   );
 }
